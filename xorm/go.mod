@@ -1,4 +1,4 @@
-module github.com/go-xorm/cmd/xorm
+module github.com/timezstyle/cmd/xorm
 
 require (
 	cloud.google.com/go v0.37.0 // indirect

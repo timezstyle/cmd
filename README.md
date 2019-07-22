@@ -1,5 +1,5 @@
 
-[中文](https://github.com/go-xorm/cmd/blob/master/README_CN.md)
+[中文](https://github.com/timezstyle/cmd/blob/master/README_CN.md)
 
 # xorm tools
 
@@ -7,7 +7,7 @@ xorm tools is a set of  tools for database operation.
 
 ## Source Install
 
-`go get github.com/go-xorm/cmd/xorm`
+`go get github.com/timezstyle/cmd/xorm`
 
 and you should install the depends below:
 
@@ -45,7 +45,7 @@ to get help
 
 example:
 
-`cd $GOPATH/src/github.com/go-xorm/cmd/xorm`
+`cd $GOPATH/src/github.com/timezstyle/cmd/xorm`
 
 sqlite:
 `xorm reverse sqite3 test.db templates/goxorm`
