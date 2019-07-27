@@ -41,6 +41,8 @@ func ToGoLowerCamel(s string) string {
 	ret := strcase.ToLowerCamel(s)
 	if strings.HasSuffix(ret, "Id") {
 		ret = ret[:len(ret)-2] + "ID"
+	} else if strings.HasSuffix(ret, "Url") {
+		ret = ret[:len(ret)-3] + "URL"
 	}
 	return ret
 }
@@ -51,6 +53,8 @@ func ToGoCamel(s string) string {
 		ret = ret[:len(ret)-2] + "ID"
 	} else if ret == "id" {
 		ret = "ID"
+	} else if strings.HasSuffix(ret, "Url") {
+		ret = ret[:len(ret)-3] + "URL"
 	}
 	return ret
 }
