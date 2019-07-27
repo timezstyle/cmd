@@ -9,6 +9,7 @@ import (
 	"text/template"
 
 	"github.com/go-xorm/core"
+	"github.com/iancoleman/strcase"
 )
 
 var ProtoCounter = map[string]int{}
@@ -28,14 +29,31 @@ var (
 				ProtoCounter = map[string]int{}
 				return ""
 			},
-			"HasSuffix": func(s, suffix string) bool {
-				return strings.HasSuffix(s, suffix)
-			},
+			"HasSuffix":      strings.HasSuffix,
+			"ToGoLowerCamel": ToGoLowerCamel,
 		},
 		nil,
 		genProtoImports,
 	}
 )
+
+func ToGoLowerCamel(s string) string {
+	ret := strcase.ToLowerCamel(s)
+	if strings.HasSuffix(ret, "Id") {
+		ret = ret[:len(ret)-2] + "ID"
+	}
+	return ret
+}
+
+func ToGoCamel(s string) string {
+	ret := strcase.ToCamel(s)
+	if strings.HasSuffix(ret, "Id") {
+		ret = ret[:len(ret)-2] + "ID"
+	} else if ret == "id" {
+		ret = "ID"
+	}
+	return ret
+}
 
 func protoTypeStr(col *core.Column) string {
 	tp := col.SQLType
