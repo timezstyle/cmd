@@ -30,6 +30,7 @@ var (
 				return ""
 			},
 			"HasSuffix":      strings.HasSuffix,
+			"ToLowerCamel":   strcase.ToLowerCamel,
 			"ToGoLowerCamel": ToGoLowerCamel,
 		},
 		nil,
