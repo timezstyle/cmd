@@ -78,7 +78,7 @@ func protoTypeStr(col *core.Column) string {
 		return "float"
 	case core.Double:
 		return "double"
-	case core.TinyBlob, core.Blob, core.MediumBlob, core.LongBlob, core.Bytea:
+	case core.TinyBlob, core.Blob, core.MediumBlob, core.LongBlob, core.Bytea, core.Json:
 		return "bytes"
 	case core.Bool:
 		return "bool"

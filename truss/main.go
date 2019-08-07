@@ -112,6 +112,8 @@ func GoType(name string) string {
 	switch name {
 	case "google.protobuf.Timestamp":
 		return "db.Timestamp"
+	case "bytes":
+		return "json.RawMessage"
 	default:
 		return name
 	}
